@@ -1,0 +1,82 @@
+[
+  {
+    "uid": "A1",
+    "title": "URL field wins",
+    "startEpoch": 1790000000,
+    "url": "https://acme.zoom.us/j/111111111?pwd=abc",
+    "location": "https://zoom.us/j/222222222",
+    "notes": "https://zoom.us/j/333333333"
+  },
+  {
+    "uid": "A2",
+    "title": "Location fallback",
+    "startEpoch": 1790000100,
+    "url": "",
+    "location": "Zoom: https://us02web.zoom.us/j/444444444?pwd=xyz.",
+    "notes": ""
+  },
+  {
+    "uid": "A3",
+    "title": "Notes with escaped html",
+    "startEpoch": 1790000200,
+    "url": "",
+    "location": "",
+    "notes": "Join <a href=\"https://zoom.us/j/555555555?pwd=a&amp;b=1\">here</a>"
+  },
+  {
+    "uid": "A4",
+    "title": "zoommtg scheme",
+    "startEpoch": 1790000300,
+    "url": "zoommtg://zoom.us/join?confno=666666666",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "uid": "A5",
+    "title": "No link",
+    "startEpoch": 1790000400,
+    "url": "",
+    "location": "Room 4",
+    "notes": "Agenda only"
+  },
+  {
+    "uid": "A6",
+    "title": "Malformed",
+    "startEpoch": 1790000500,
+    "url": null,
+    "location": null,
+    "notes": null
+  },
+  {
+    "uid": "M1",
+    "title": "Meet in url",
+    "startEpoch": 1790001000,
+    "url": "https://meet.google.com/abc-defg-hij?authuser=0",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "uid": "M2",
+    "title": "Meet via google redirect in notes",
+    "startEpoch": 1790001001,
+    "url": "",
+    "location": "",
+    "notes": "Join: <a href=\"https://www.google.com/url?q=https://meet.google.com/xyz-abcd-efg&amp;sa=D\">link</a>"
+  },
+  {
+    "uid": "M3",
+    "title": "Zoom in location beats Meet in notes",
+    "startEpoch": 1790001002,
+    "url": "",
+    "location": "https://zoom.us/j/123456789",
+    "notes": "https://meet.google.com/aaa-bbbb-ccc"
+  },
+  {
+    "uid": "M4",
+    "title": "Not a meeting code",
+    "startEpoch": 1790001003,
+    "url": "https://meet.google.com/landing",
+    "location": "",
+    "notes": ""
+  }
+]
