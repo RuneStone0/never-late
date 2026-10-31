@@ -16,7 +16,7 @@ In Zoom, turn on **Settings → Video → Turn off my video when joining a meeti
 
 It is a single Swift file with no dependencies. It reads events from Calendar.app through EventKit, so it works with any account Calendar.app syncs (iCloud, Google, Exchange, ...). launchd runs it every 60 seconds, and each run:
 
-1. Reads events starting in the next ~55–125 seconds from all calendars. The window is wider than 60 seconds so consecutive runs overlap and a late launchd tick can't skip a meeting.
+1. Reads events starting in the next ~5–70 seconds from all calendars. The window is wider than 60 seconds so consecutive runs overlap and a late launchd tick can't skip a meeting.
 2. Skips all-day events and events you declined or marked tentative. Unanswered invites and events you organize are kept.
 3. Looks for a link in the event's URL field, then its location, then its notes: `zoom.us/j/…`, `zoommtg://…` or `meet.google.com/xxx-xxxx-xxx`. Events without a link are ignored.
 4. Runs `open <link>` once per meeting. Which meetings were already opened is remembered in `~/Library/Application Support/never-late/state.json` (entries are pruned after 24 hours).

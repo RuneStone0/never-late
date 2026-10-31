@@ -4,7 +4,7 @@
 // Usage: never_late [options]
 //   --dry-run         log what would be opened; don't open anything or write state
 //   --debug           like --dry-run, and log every event in the window with why it was kept or skipped
-//   --window MIN MAX  look at events starting MIN..MAX seconds from now (default 55 125; may be negative)
+//   --window MIN MAX  look at events starting MIN..MAX seconds from now (default 5 70; may be negative)
 //   --calendars A,B   only read these calendar titles (default: all)
 //   --fixture FILE    read events from a JSON file instead of Calendar (for tests)
 
@@ -37,11 +37,11 @@ struct RunError: Error, CustomStringConvertible {
 struct Options {
     var dryRun = false
     var debug = false
-    var window = (min: 55.0, max: 125.0)
+    var window = (min: 5.0, max: 70.0)
     var calendarNames: [String]?
     var fixturePath: String?
 
-    // The target is "about 60-90s before start". The far end is widened past min+60 so that
+    // The target is "about 10-70s before start". The far end is widened past min+60 so that
     // consecutive 60s runs always overlap despite launchd jitter; dedup makes the overlap harmless.
     static func parse(_ arguments: [String]) throws -> Options {
         var options = Options()
